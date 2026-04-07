@@ -1449,6 +1449,17 @@ ul {
 /* ============================================
    Responsive
    ============================================ */
+@media (max-width: 1280px) {
+  .header__nav,
+  .header__contact {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 @media (max-width: 768px) {
   .sp-only {
     display: inline;
@@ -1467,15 +1478,6 @@ ul {
     flex-direction: column;
     text-align: center;
     gap: 2px;
-  }
-
-  .header__nav,
-  .header__contact {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
   }
 
   .header__inner {
