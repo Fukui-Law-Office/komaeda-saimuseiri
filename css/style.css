@@ -1449,7 +1449,7 @@ ul {
 /* ============================================
    Responsive
    ============================================ */
-@media (max-width: 1280px) {
+@media (max-width: 1400px) {
   .header__nav,
   .header__contact {
     display: none;
