@@ -200,7 +200,6 @@ ul {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
-  overflow: hidden;
 }
 
 .header__logo {
@@ -262,23 +261,27 @@ ul {
 .header__right {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 10px;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .header__nav a {
   color: var(--color-text);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 500;
   white-space: nowrap;
   position: relative;
   padding-bottom: 2px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .header__nav a::after {
@@ -305,7 +308,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 14px;
-  flex-shrink: 1;
+  flex-shrink: 0;
 }
 
 .header__tel {
@@ -326,9 +329,10 @@ ul {
 }
 
 .header__tel-number {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .header__tel-icon {
@@ -393,7 +397,7 @@ ul {
   display: flex;
   min-height: 520px;
   overflow: hidden;
-  max-width: 100%;
+  width: 100%;
 }
 
 .hero__text-area {
@@ -2348,6 +2352,27 @@ table tbody td strong {
 
   .hero__content {
     padding: 48px 32px 48px 40px;
+  }
+
+  .header__nav {
+    gap: 8px;
+  }
+
+  .header__nav a {
+    font-size: 0.78rem;
+  }
+
+  .header__right {
+    gap: 12px;
+  }
+
+  .header__tel-number {
+    font-size: 1.05rem;
+  }
+
+  .header__btn-contact {
+    padding: 8px 12px;
+    font-size: 0.78rem;
   }
 }
 
