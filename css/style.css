@@ -260,23 +260,27 @@ ul {
 .header__right {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 10px;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .header__nav a {
   color: var(--color-text);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 500;
   white-space: nowrap;
   position: relative;
   padding-bottom: 2px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .header__nav a::after {
@@ -324,9 +328,10 @@ ul {
 }
 
 .header__tel-number {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .header__tel-icon {
@@ -339,7 +344,7 @@ ul {
   gap: 5px;
   background: var(--color-primary);
   color: #fff;
-  padding: 9px 18px;
+  padding: 8px 14px;
   border-radius: var(--radius);
   font-size: 0.84rem;
   font-weight: 700;
