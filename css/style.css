@@ -200,6 +200,7 @@ ul {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
+  overflow: hidden;
 }
 
 .header__logo {
@@ -400,12 +401,11 @@ ul {
   background: var(--color-primary-dark);
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .hero__content {
-  max-width: 600px;
-  padding: 60px 40px;
+  width: 100%;
+  padding: 60px 48px 60px 60px;
   color: #fff;
 }
 
@@ -480,8 +480,8 @@ ul {
 }
 
 .hero__photo-area {
-  width: 44%;
-  max-width: 44%;
+  width: 40%;
+  max-width: 40%;
   flex-shrink: 0;
   position: relative;
   background: var(--color-bg-alt);
@@ -2342,11 +2342,12 @@ table tbody td strong {
   }
 
   .hero__photo-area {
-    width: 38%;
+    width: 36%;
+    max-width: 36%;
   }
 
   .hero__content {
-    max-width: 440px;
+    padding: 48px 32px 48px 40px;
   }
 }
 
