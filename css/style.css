@@ -20,7 +20,7 @@
   --color-gold: #c49a2a;
   --font-sans: 'Noto Sans JP', '游ゴシック', 'Yu Gothic', sans-serif;
   --font-serif: 'Noto Serif JP', '游明朝', 'Yu Mincho', serif;
-  --max-width: 1200px;
+  --max-width: 1080px;
   --header-height: 76px;
   --header-top-height: 32px;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
@@ -196,8 +196,9 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 24px;
 }
 
 .header__logo {
@@ -259,27 +260,23 @@ ul {
 .header__right {
   display: flex;
   align-items: center;
-  gap: 16px;
-  min-width: 0;
-  flex-shrink: 1;
+  gap: 24px;
 }
 
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 1;
-  min-width: 0;
+  gap: 22px;
 }
 
 .header__nav a {
   color: var(--color-text);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 500;
   white-space: nowrap;
   position: relative;
   padding-bottom: 2px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 .header__nav a::after {
@@ -327,10 +324,9 @@ ul {
 }
 
 .header__tel-number {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  white-space: nowrap;
 }
 
 .header__tel-icon {
@@ -343,7 +339,7 @@ ul {
   gap: 5px;
   background: var(--color-primary);
   color: #fff;
-  padding: 8px 14px;
+  padding: 9px 18px;
   border-radius: var(--radius);
   font-size: 0.84rem;
   font-weight: 700;
@@ -402,11 +398,12 @@ ul {
   background: var(--color-primary-dark);
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .hero__content {
-  width: 100%;
-  padding: 60px 48px 60px 60px;
+  max-width: 540px;
+  padding: 60px 48px 60px 24px;
   color: #fff;
 }
 
