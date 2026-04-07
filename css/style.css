@@ -196,9 +196,8 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
-  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 .header__logo {
@@ -1449,17 +1448,6 @@ ul {
 /* ============================================
    Responsive
    ============================================ */
-@media (max-width: 1400px) {
-  .header__nav,
-  .header__contact {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
-
 @media (max-width: 768px) {
   .sp-only {
     display: inline;
@@ -1478,6 +1466,15 @@ ul {
     flex-direction: column;
     text-align: center;
     gap: 2px;
+  }
+
+  .header__nav,
+  .header__contact {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
   }
 
   .header__inner {
