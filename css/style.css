@@ -402,12 +402,11 @@ ul {
   background: var(--color-primary-dark);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .hero__content {
-  max-width: 540px;
-  padding: 60px 48px 60px 24px;
+  width: 100%;
+  padding: 60px 48px 60px 60px;
   color: #fff;
 }
 
