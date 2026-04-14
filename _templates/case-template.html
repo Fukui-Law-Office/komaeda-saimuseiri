@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ★ タイトル：事例タイトル｜解決事例｜福井で債務整理に強い弁護士 ふくい総合法律事務所 -->
+  <title>{{事例タイトル}}｜解決事例｜福井で債務整理に強い弁護士 ふくい総合法律事務所</title>
+  <!-- ★ meta description：80〜120文字。具体的な金額・手続き・属性を明記 -->
+  <meta name="description" content="【解決事例】{{金額}}の借金を{{手続き}}で{{結果}}。{{属性}}のケース。福井の弁護士が解説。初回相談無料。">
+  <meta property="og:title" content="{{事例タイトル}}｜解決事例">
+  <meta property="og:description" content="【解決事例】{{金額}}の借金を{{手続き}}で{{結果}}。{{属性}}のケース。福井の弁護士が解説。初回相談無料。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="弁護士法人ふくい総合法律事務所 債務整理サイト">
+  <meta property="og:locale" content="ja_JP">
+  <!-- ★ Article構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{事例タイトル}}",
+    "author": { "@type": "Person", "name": "小前田 宙", "jobTitle": "弁護士" },
+    "publisher": { "@type": "LegalService", "name": "弁護士法人ふくい総合法律事務所" },
+    "datePublished": "{{YYYY-MM-DD}}"
+  }
+  </script>
+  <!-- ★ BreadcrumbList構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://komaeda-saimuseiri.com/"},
+      {"@type": "ListItem", "position": 2, "name": "解決事例", "item": "https://komaeda-saimuseiri.com/cases.html"},
+      {"@type": "ListItem", "position": 3, "name": "{{事例タイトル}}", "item": "https://komaeda-saimuseiri.com/cases/{{ファイル名}}.html"}
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="header-top">
+    <div class="header-top__inner">
+      <span>初回相談無料｜福井駅 徒歩7分｜駐車場完備</span><span class="header-top__hours">予約受付：9:30〜20:00（土日祝対応）／ 相談時間：9:30〜17:00（夜間・土日祝応相談）</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="../index.html" class="header__logo">
+        <img src="../images/logo.png" alt="ふくい総合法律事務所ロゴ" class="header__logo-icon">
+        <div class="header__logo-text">
+          <span class="header__logo-top">福井の弁護士による<strong>債務整理無料相談</strong></span>
+          <span class="header__logo-bottom">福井駅 徒歩7分 無料駐車場完備 弁護士法人ふくい総合法律事務所</span>
+        </div>
+      </a>
+      <div class="header__right">
+        <nav class="header__nav">
+          <a href="../jiko-hasan/index.html">自己破産</a>
+          <a href="../kojin-saisei/index.html">個人再生</a>
+          <a href="../niniseiri.html">任意整理</a>
+          <a href="../cases.html">解決事例</a>
+          <a href="../column/index.html">コラム</a>
+          <a href="../comparison.html">手続き比較</a>
+          <a href="../about.html">事務所紹介</a>
+          <a href="https://www.komaeda-kotsujiko.com/contact" target="_blank" rel="noopener noreferrer">お問い合わせ</a>
+        </nav>
+        <button class="header__menu-btn" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-hero__category"><a href="../cases.html">解決事例一覧</a></p>
+      <h1 class="page-hero__title">{{事例タイトル}}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <article class="column-article">
+
+        <!-- ★ 事例の概要テーブル -->
+        <table class="case-table">
+          <tr><th>ご相談者</th><td>{{年代・性別・職業}}</td></tr>
+          <tr><th>借入総額</th><td>{{金額}}</td></tr>
+          <tr><th>借入先</th><td>{{債権者}}</td></tr>
+          <tr><th>解決方法</th><td>{{自己破産/個人再生/任意整理}}</td></tr>
+          <tr><th>結果</th><td>{{結果の要約}}</td></tr>
+        </table>
+
+        <h2>ご相談の経緯</h2>
+        <p>{{経緯}}</p>
+
+        <h2>解決までの流れ</h2>
+        <p>{{解決の流れ}}</p>
+
+        <h2>弁護士からのコメント</h2>
+        <p>{{コメント}}</p>
+
+        <!-- ★ 関連コラムリンク -->
+        <div class="column-article__case-link">
+          <p>&#9654; <a href="../column/{{関連コラムファイル名}}.html">{{関連コラムタイトル}}</a></p>
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+  <!-- ★ 関連コラム -->
+  <section class="section related-articles">
+    <div class="container">
+      <h2 class="section__title">関連コラム</h2>
+      <div class="section__title-bar"></div>
+      <ul class="related-articles__list">
+        <li><a href="../column/{{関連記事1}}.html">{{関連記事1タイトル}}</a></li>
+        <li><a href="../column/{{関連記事2}}.html">{{関連記事2タイトル}}</a></li>
+        <li><a href="../column/{{関連記事3}}.html">{{関連記事3タイトル}}</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <div class="cta-section__content">
+      <span class="cta-section__free">初回相談無料</span>
+      <h2 class="cta-section__title">借金のお悩み、一人で抱えていませんか？</h2>
+      <p class="cta-section__sub">秘密厳守。相談したからといって、依頼する必要はありません。<br>まずはお電話・LINEで相談予約をお取りください。</p>
+      <div class="cta-section__tel">
+        <p class="cta-section__tel-number"><a href="tel:0776-28-2824">&#9742; 0776-28-2824</a></p>
+        <p class="cta-section__tel-hours">予約受付：9:30〜20:00（土日祝も対応）／ 相談時間：9:30〜17:00（夜間・土日祝応相談）</p>
+      </div>
+      <div class="cta-section__buttons">
+        <a href="https://page.line.me/101qrrcj?openQrModal=true" class="btn btn--line btn--large">LINEで相談予約</a>
+        <a href="https://www.komaeda-kotsujiko.com/contact" target="_blank" rel="noopener noreferrer" class="btn btn--white-outline btn--large">メールで相談予約</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__info">
+        <h3>弁護士法人ふくい総合法律事務所</h3>
+        <p>
+          〒910-0005 福井県福井市大手3丁目14番10号 TMY大名町ビル5階<br>
+          TEL: <a href="tel:0776-28-2824">0776-28-2824</a>｜FAX: 0776-28-2825<br>
+          福井駅から徒歩7分・駐車場完備<br>
+          対応エリア：福井県全域<br>
+          （福井市・坂井市・鯖江市・越前市・敦賀市 等）
+        </p>
+      </div>
+      <div class="footer__links">
+        <h4>サイトメニュー</h4>
+        <ul>
+          <li><a href="../index.html">トップページ</a></li>
+          <li><a href="../jiko-hasan/index.html">自己破産</a></li>
+          <li><a href="../kojin-saisei/index.html">個人再生</a></li>
+          <li><a href="../niniseiri.html">任意整理</a></li>
+          <li><a href="../comparison.html">手続き比較</a></li>
+          <li><a href="../cases.html">解決事例</a></li>
+          <li><a href="../column/index.html">コラム</a></li>
+          <li><a href="../about.html">事務所紹介</a></li>
+          <li><a href="https://www.komaeda-kotsujiko.com/contact" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 弁護士法人ふくい総合法律事務所 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <div class="floating-cta__inner">
+      <span class="floating-cta__label">初回相談無料・秘密厳守｜ご予約受付中</span>
+      <div class="floating-cta__buttons">
+        <a href="tel:0776-28-2824" class="btn btn--cta btn--small">&#9742; 電話予約</a>
+        <a href="https://line.me/" target="_blank" rel="noopener noreferrer" class="btn btn--cta btn--green btn--small">LINE予約</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
