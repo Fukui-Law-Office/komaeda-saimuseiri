@@ -145,10 +145,21 @@ ul {
   content: "・";
 }
 
-.faq-item + .faq-item {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e5e7eb;
+.faq-item {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.faq-list {
+  margin: 0;
+  padding: 0;
 }
 
 /* ============================================
