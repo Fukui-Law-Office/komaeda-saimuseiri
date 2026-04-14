@@ -2541,6 +2541,58 @@ table tbody td strong {
 }
 
 /* ============================================
+   Related Articles
+   ============================================ */
+.related-articles {
+  background: var(--color-bg-alt);
+  padding: 3rem 0;
+}
+
+.related-articles__list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.related-articles__list li {
+  background: #fff;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--color-accent);
+  transition: box-shadow 0.2s;
+}
+
+.related-articles__list li:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.related-articles__list li a {
+  display: block;
+  padding: 1rem 1.2rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.related-articles__list li a::before {
+  content: "▶ ";
+  color: var(--color-accent);
+  font-size: 0.75em;
+}
+
+.related-articles__list li a:hover {
+  color: var(--color-accent);
+}
+
+@media (min-width: 768px) {
+  .related-articles__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================
    Column List (index)
    ============================================ */
 .column-list__category {
