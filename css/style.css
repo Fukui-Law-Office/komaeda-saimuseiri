@@ -2522,6 +2522,31 @@ table tbody td strong {
   color: var(--color-primary);
 }
 
+.column-article__illustration {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.column-article__illustration img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.section__illustration {
+  margin: 2rem auto;
+  max-width: 720px;
+  text-align: center;
+}
+
+.section__illustration img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
 .column-article__case-link {
   margin-top: 2.5rem;
   padding: 1.2rem 1.5rem;
