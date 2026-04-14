@@ -1847,8 +1847,8 @@ table tbody td strong {
 
 .attorney-card__photo {
   flex-shrink: 0;
-  width: 220px;
-  height: 220px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -2282,8 +2282,8 @@ table tbody td strong {
   }
 
   .attorney-card__photo {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
   }
 
   .attorney-card__name {
