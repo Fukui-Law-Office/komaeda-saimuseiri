@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>法人破産モックアップ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-primary: #1a2a3a;
+      --color-primary-dark: #0f1a28;
+      --color-accent: #1a5c3a;
+      --color-cta: #b8860b;
+      --color-cta-hover: #9a7209;
+      --color-text: #2c2c2c;
+      --color-text-light: #666;
+      --color-bg: #fff;
+      --color-bg-alt: #f5f6f8;
+      --color-border: #ddd;
+      --font-sans: 'Noto Sans JP', sans-serif;
+      --font-serif: 'Noto Serif JP', serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      color: var(--color-text);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== Header Top ===== */
+    .header-top {
+      background: var(--color-primary-dark);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.72rem;
+      padding: 6px 0;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .header-top__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .header-top__hours {
+      margin-left: 16px;
+    }
+
+    /* ===== Header ===== */
+    .header {
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header__logo {
+      text-decoration: none;
+      color: var(--color-primary);
+    }
+    .header__logo-top {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+    }
+    .header__logo-top strong {
+      font-size: 1.2rem;
+      font-family: var(--font-serif);
+      letter-spacing: 0.08em;
+    }
+    .header__logo-bottom {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--color-text-light);
+      margin-top: 2px;
+    }
+    .header__nav {
+      display: flex;
+      gap: 24px;
+    }
+    .header__nav a {
+      text-decoration: none;
+      color: var(--color-text);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .header__tel {
+      text-decoration: none;
+      color: var(--color-primary);
+      text-align: right;
+    }
+    .header__tel-label {
+      display: block;
+      font-size: 0.68rem;
+      color: var(--color-text-light);
+    }
+    .header__tel-number {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .header__right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .header__contact {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header__btn-contact {
+      background: var(--color-cta);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      display: flex;
+      min-height: 540px;
+      overflow: hidden;
+    }
+    .hero__text-area {
+      flex: 1;
+      background: var(--color-primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .hero__content {
+      max-width: 560px;
+      padding: 60px 48px 60px 24px;
+      color: #fff;
+    }
+    .hero__label {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 3px;
+      padding: 5px 18px;
+      font-size: 0.74rem;
+      margin-bottom: 22px;
+      letter-spacing: 0.15em;
+    }
+    .hero__catch {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+    }
+    .hero__catch em {
+      font-style: normal;
+      background: linear-gradient(transparent 60%, rgba(184, 134, 11, 0.35) 60%);
+      padding-bottom: 2px;
+    }
+    .hero__sub {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-bottom: 30px;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+    .hero__badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .hero__badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 3px;
+      padding: 5px 14px;
+      font-size: 0.84rem;
+      white-space: nowrap;
+    }
+    .hero__cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hero__cta-note {
+      margin-top: 14px;
+      font-size: 0.84rem;
+      opacity: 0.65;
+    }
+    .hero__photo-area {
+      width: 44%;
+      flex-shrink: 0;
+      background: var(--color-bg-alt);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero__photo-placeholder {
+      text-align: center;
+      color: var(--color-text-light);
+      font-size: 0.9rem;
+    }
+    .hero__photo-placeholder .icon {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 12px;
+      opacity: 0.4;
+    }
+    .hero__photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.88);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      letter-spacing: 0.12em;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      transition: 0.2s;
+    }
+    .btn--phone {
+      background: var(--color-cta);
+      color: #fff;
+    }
+    .btn--line {
+      background: #06C755;
+      color: #fff;
+    }
+    .btn--large {
+      padding: 16px 40px;
+      font-size: 1.1rem;
+    }
+    .btn--white-outline {
+      border: 2px solid #fff;
+      color: #fff;
+      background: transparent;
+    }
+
+    /* ===== Section ===== */
+    .section {
+      padding: 72px 0;
+    }
+    .section--alt {
+      background: var(--color-bg-alt);
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .section__title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.06em;
+      color: var(--color-primary);
+    }
+    .section__title-bar {
+      width: 48px;
+      height: 3px;
+      background: var(--color-cta);
+      margin: 16px auto 28px;
+    }
+    .section__subtitle {
+      text-align: center;
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    /* ===== Worries ===== */
+    .worries__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .worries__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #fff;
+      padding: 18px 20px;
+      border-radius: 6px;
+      border-left: 4px solid var(--color-cta);
+      font-size: 0.95rem;
+    }
+    .worries__check {
+      color: var(--color-cta);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ===== Cards ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid var(--color-border);
+    }
+    .card__icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .card__title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+    .card__text {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      line-height: 1.8;
+    }
+
+    /* ===== Features ===== */
+    .features__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 24px;
+      background: #fff;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+    }
+    .feature__number {
+      background: var(--color-primary);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .feature__title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      color: var(--color-primary);
+    }
+    .feature__text {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+
+    /* ===== Mini CTA ===== */
+    .mini-cta {
+      background: var(--color-primary);
+      padding: 36px 0;
+    }
+    .mini-cta__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mini-cta__text {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .mini-cta__buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, #1a3a5c 100%);
+      padding: 72px 0;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-section__content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .cta-section__free {
+      display: inline-block;
+      background: var(--color-cta);
+      padding: 6px 28px;
+      border-radius: 3px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+    .cta-section__title {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .cta-section__sub {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .cta-section__tel {
+      margin-bottom: 28px;
+    }
+    .cta-section__tel-number a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .cta-section__tel-hours {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 8px;
+    }
+    .cta-section__buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .cta-section__reassure {
+      font-size: 0.82rem;
+      opacity: 0.6;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--color-primary-dark);
+      color: rgba(255,255,255,0.75);
+      padding: 56px 0 0;
+    }
+    .footer__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 60px;
+    }
+    .footer__info h3 {
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    .footer__info p {
+      font-size: 0.85rem;
+      line-height: 1.9;
+    }
+    .footer__info a {
+      color: rgba(255,255,255,0.75);
+    }
+    .footer__links h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .footer__links ul {
+      list-style: none;
+    }
+    .footer__links li {
+      margin-bottom: 8px;
+    }
+    .footer__links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    .footer__bottom {
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+    .footer__bottom a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .header__nav, .header__contact { display: none; }
+      .hero { flex-direction: column; }
+      .hero__text-area { order: 2; }
+      .hero__photo-area { width: 100%; height: 220px; order: 1; }
+      .hero__content { padding: 32px 20px 40px; text-align: center; max-width: none; }
+      .hero__catch { font-size: 1.4rem; }
+      .hero__badges { justify-content: center; }
+      .hero__cta { justify-content: center; }
+      .worries__grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .features__grid { grid-template-columns: 1fr; }
+      .mini-cta__inner { flex-direction: column; text-align: center; gap: 16px; }
+      .cta-section__buttons { flex-direction: column; align-items: center; }
+      .footer__inner { flex-direction: column; gap: 32px; }
+      .header-top__hours { display: block; margin-left: 0; margin-top: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Top -->
+  <div class="header-top">
+    <div class="header-top__inner">
+      <span>初回相談無料｜福井駅 徒歩7分｜駐車場完備</span><span class="header-top__hours">予約受付：9:30〜20:00（土日祝対応）／ 相談時間：9:30〜17:00（夜間・土日祝応相談）</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo">
+        <span class="header__logo-top">福井の弁護士による<strong>法人破産無料相談</strong></span>
+        <span class="header__logo-bottom">福井駅 徒歩7分 無料駐車場完備 弁護士法人ふくい総合法律事務所</span>
+      </a>
+      <div class="header__right">
+        <nav class="header__nav">
+          <a href="#">法人破産とは</a>
+          <a href="#">手続きの流れ</a>
+          <a href="#">費用</a>
+          <a href="#">よくある質問</a>
+          <a href="#">事務所案内</a>
+        </nav>
+        <div class="header__contact">
+          <a href="tel:0776-28-2824" class="header__tel">
+            <span class="header__tel-label">相談予約はお電話で</span>
+            <span class="header__tel-number">☎ 0776-28-2824</span>
+          </a>
+          <a href="#" class="header__btn-contact">無料相談の予約</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__text-area">
+      <div class="hero__content">
+        <span class="hero__label">経営者のための法人破産相談｜初回無料</span>
+        <h1 class="hero__catch">会社の借金問題、<br><em>一人で抱え込まないで</em>ください</h1>
+        <p class="hero__sub">資金繰りが限界、従業員への対応、取引先への影響――<br>経営者として重い決断を迫られているあなたを、<br>福井の弁護士がサポートします。</p>
+        <div class="hero__badges">
+          <span class="hero__badge">初回相談無料</span>
+          <span class="hero__badge">予約受付20時まで</span>
+          <span class="hero__badge">秘密厳守</span>
+          <span class="hero__badge">経営者の再出発を支援</span>
+        </div>
+        <div class="hero__cta">
+          <a href="tel:0776-28-2824" class="btn btn--phone btn--large">☎ 電話で相談予約</a>
+          <a href="#" class="btn btn--line btn--large">LINEで相談予約</a>
+        </div>
+        <p class="hero__cta-note">相談したからといって、依頼する必要はありません</p>
+      </div>
+    </div>
+    <div class="hero__photo-area">
+      <div class="hero__photo-placeholder">
+        <span class="icon">🏢</span>
+        ここに弁護士の写真<br>（相談風景など）
+      </div>
+      <p class="hero__photo-caption">代表弁護士　小前田　宙</p>
+    </div>
+  </section>
+
+  <!-- Worries -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">こんなお悩みありませんか？</h2>
+      <div class="section__title-bar"></div>
+      <p class="section__subtitle">一つでも当てはまったら、まずは弁護士にご相談ください</p>
+      <div class="worries__grid">
+        <div class="worries__item">
+          <span class="worries__check">✓</span>
+          <span>資金繰りが回らず、来月の支払いが見通せない</span>
+        </div>
+        <div class="worries__item">
+          <span class="worries__check">✓</span>
+          <span>銀行への返済が滞り、督促が来ている</span>
+        </div>
+        <div class="worries__item">
+          <span class="worries__check">✓</span>
+          <span>従業員の給与や退職金をどうすればいいかわからない</span>
+        </div>
+        <div class="worries__item">
+          <span class="worries__check">✓</span>
+          <span>取引先や仕入先に迷惑をかけたくない</span>
+        </div>
+        <div class="worries__item">
+          <span class="worries__check">✓</span>
+          <span>連帯保証人としての個人の責任が心配</span>
+        </div>
+        <div class="worries__item">
+          <span class="worries__check">✓</span>
+          <span>廃業後の自分の生活がどうなるか不安</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title">法人破産で解決できること</h2>
+      <div class="section__title-bar"></div>
+      <p class="section__subtitle">会社の借金をゼロにし、経営者の再出発を支援します</p>
+      <div class="cards">
+        <div class="card">
+          <div class="card__icon">📋</div>
+          <h3 class="card__title">会社の債務を<br>清算できる</h3>
+          <p class="card__text">法人破産により、会社の借入金・買掛金・リース債務等のすべての債務を法的に整理します。</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🛡️</div>
+          <h3 class="card__title">督促・取立てが<br>止まる</h3>
+          <p class="card__text">弁護士に依頼した時点で受任通知を送付。債権者からの督促・取立てがストップします。</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🔄</div>
+          <h3 class="card__title">経営者の<br>再出発を支援</h3>
+          <p class="card__text">代表者個人の自己破産も同時に進め、連帯保証債務を整理。新たな人生のスタートを支えます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini CTA -->
+  <section class="mini-cta">
+    <div class="mini-cta__inner">
+      <p class="mini-cta__text">経営の悩みを一人で抱えていませんか？<br>まずはお気軽にご相談ください。</p>
+      <div class="mini-cta__buttons">
+        <a href="tel:0776-28-2824" class="btn btn--phone">☎ 電話で予約</a>
+        <a href="#" class="btn btn--line">LINEで予約</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">当事務所が選ばれる理由</h2>
+      <div class="section__title-bar"></div>
+      <div class="features__grid">
+        <div class="feature">
+          <div class="feature__number">01</div>
+          <div>
+            <div class="feature__title">法人破産の実績</div>
+            <p class="feature__text">中小企業の法人破産を数多く手がけてきた経験があります。</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__number">02</div>
+          <div>
+            <div class="feature__title">経営者個人もサポート</div>
+            <p class="feature__text">法人と代表者の破産を同時に進め、連帯保証の問題も解決します。</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__number">03</div>
+          <div>
+            <div class="feature__title">従業員対応もお任せ</div>
+            <p class="feature__text">未払賃金立替払制度の案内など、従業員への対応もサポートします。</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__number">04</div>
+          <div>
+            <div class="feature__title">初回相談無料</div>
+            <p class="feature__text">法人破産に関するご相談は初回無料。費用の分割払いにも対応。</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__number">05</div>
+          <div>
+            <div class="feature__title">秘密厳守</div>
+            <p class="feature__text">相談段階で外部に情報が漏れることはありません。安心してご相談ください。</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__number">06</div>
+          <div>
+            <div class="feature__title">福井駅から徒歩7分</div>
+            <p class="feature__text">福井駅近く、無料駐車場完備。お仕事帰りのご相談もお気軽に。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-section__content">
+      <span class="cta-section__free">初回相談無料</span>
+      <h2 class="cta-section__title">経営者としての重い決断、<br>弁護士と一緒に考えませんか</h2>
+      <p class="cta-section__sub">秘密厳守。相談したからといって、依頼する必要はありません。<br>まずはお電話・LINEで相談予約をお取りください。</p>
+      <div class="cta-section__tel">
+        <p class="cta-section__tel-number"><a href="tel:0776-28-2824">☎ 0776-28-2824</a></p>
+        <p class="cta-section__tel-hours">予約受付：9:30〜20:00（土日祝も対応）／ 相談時間：9:30〜17:00（夜間・土日祝応相談）</p>
+      </div>
+      <div class="cta-section__buttons">
+        <a href="#" class="btn btn--line btn--large">LINEで予約</a>
+        <a href="#" class="btn btn--white-outline btn--large">メールで予約</a>
+      </div>
+      <p class="cta-section__reassure">お名前・ご希望日時をお伝えいただくとスムーズにご予約いただけます</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__info">
+        <h3>弁護士法人ふくい総合法律事務所</h3>
+        <p>
+          〒910-0005<br>
+          福井県福井市大手3丁目14番10号<br>
+          TMY大名町ビル5階<br><br>
+          TEL: <a href="tel:0776-28-2824">0776-28-2824</a><br>
+          FAX: 0776-28-2825<br><br>
+          福井駅から徒歩7分・駐車場完備<br>
+          対応エリア：福井県全域
+        </p>
+      </div>
+      <div class="footer__links">
+        <h4>サイトメニュー</h4>
+        <ul>
+          <li><a href="#">トップページ</a></li>
+          <li><a href="#">法人破産とは</a></li>
+          <li><a href="#">手続きの流れ</a></li>
+          <li><a href="#">費用</a></li>
+          <li><a href="#">よくある質問</a></li>
+          <li><a href="#">事務所案内</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 弁護士法人ふくい総合法律事務所</p>
+      <a href="#">プライバシーポリシー</a>
+    </div>
+  </footer>
+
+</body>
+</html>
