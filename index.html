@@ -20,9 +20,10 @@
     "@context": "https://schema.org",
     "@type": "LegalService",
     "name": "弁護士法人ふくい総合法律事務所",
-    "description": "福井県福井市の弁護士事務所。自己破産・個人再生・任意整理など債務整理のご相談はお任せください。",
+    "description": "福井県福井市の弁護士事務所。自己破産・個人再生・任意整理など債務整理のご相談はお任せください。初回相談無料。",
     "url": "https://komaeda-saimuseiri.com/",
     "telephone": "0776-28-2824",
+    "image": "https://komaeda-saimuseiri.com/images/ogp.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "大手3丁目14番10号 TMY大名町ビル5階",
@@ -31,11 +32,40 @@
       "postalCode": "910-0005",
       "addressCountry": "JP"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.0652,
+      "longitude": 136.2196
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:30",
+        "closes": "17:00"
+      }
+    ],
     "areaServed": {
       "@type": "AdministrativeArea",
       "name": "福井県"
     },
-    "priceRange": "初回相談無料"
+    "priceRange": "初回相談無料",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "債務整理サービス",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "自己破産", "url": "https://komaeda-saimuseiri.com/jiko-hasan/index.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "個人再生", "url": "https://komaeda-saimuseiri.com/kojin-saisei/index.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "任意整理", "url": "https://komaeda-saimuseiri.com/niniseiri.html"}}
+      ]
+    },
+    "sameAs": [
+      "https://www.komaeda-law.com/",
+      "https://www.komaeda-kotsujiko.com/",
+      "https://komaeda-souzoku.com/",
+      "https://www.komaeda-rikon.com/",
+      "https://komaeda-rousai.com/"
+    ]
   }
   </script>
   <script type="application/ld+json">
